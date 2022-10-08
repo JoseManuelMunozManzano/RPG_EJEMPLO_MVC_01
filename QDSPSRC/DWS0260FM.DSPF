@@ -1,0 +1,14 @@
+     A*%%TS  SD  20221008  161401  JOMUMA      REL-V7R5M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A          R DWS026001
+     A*%%TS  SD  20221008  161401  JOMUMA      REL-V7R5M0  5770-WDS
+     A                                      CF03(03 'SALIR')
+     A                                      CF12(12 'INICIALIZAR')
+     A                                      VLDCMDKEY(90 'Intro')
+     A                                 10  3'PRODUCTO:'
+     A            F1NUMP        10A  B 10 13
+     A                                 22  2'F3=Salir'
+     A                                 22 13'F12=Inicializar'
+     A            F1ERR         60A  O 23  2COLOR(WHT)
