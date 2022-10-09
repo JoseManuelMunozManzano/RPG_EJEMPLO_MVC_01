@@ -1,0 +1,7 @@
+        /*------------------------------------------------------------------------
+        * DWS0260M1 - Binding Language
+        * Same name as the Service Program
+        *------------------------------------------------------------------------*/
+         STRPGMEXP PGMLVL(*CURRENT) LVLCHK(*YES)
+           EXPORT SYMBOL(Validate_Product)
+         ENDPGMEXP
