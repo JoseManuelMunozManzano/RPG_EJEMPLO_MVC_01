@@ -54,6 +54,12 @@ Si se pulsa F12 se inicializa la pantalla, es decir, se borra el número de prod
 
 Si se pulsa Intro se valida el número de producto informado.
 
+Para compilar:
+
+```
+CRTDSPF FILE(MyLib/DWS0260FM) SRCFILE(MyLib/QDSPSRC) RSTDSP(*YES)
+```
+
 ## QSRVSRC
 
 Se ha creado un fuente binding language llamado dws0260m1.bnd para realizar el enlace con el pgm.
