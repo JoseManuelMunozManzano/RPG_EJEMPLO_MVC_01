@@ -4,11 +4,35 @@ Se muestra un ejemplo de uso del patrón MVC con el lenguaje RPG ILE.
 
 Se usa también un service program, binding directory y binding language.
 
+Se incluye un CL de compilación.
+
 Para realizar esta prueba se han creado los siguientes fuentes en estos contenedores.
+
+## QCLLESRC
+
+Se ha creado un CLLE llamado dws0260cl.clle para compilar todos los programas salvo el PF.
+El PF, por tanto, se compilará con la opción 14 y si se desea, se pueden informar datos (ver QDDSSRC)
+
+Para compilar este CL ejecutar el comando:
+
+```
+CRTBNDCL PGM(MyLib/DWS0260CL) SRCFILE(MyLib/QCLLESRC) DBGVIEW(*ALL)
+```
+
+Y para ejecutarlo:
+
+```
+CALL DWS0260CL
+```
+
+De todas formas, se indican en los puntos siguientes, los mandatos para crearlos de forma independiente a modo de obtener ese conocimiento, pero mejor usar el CL.
 
 ## QDDSSRC
 
 Se ha creado un fichero PF llamado mspm100.pf que contiene datos de un número de producto
+
+Se compila con la opción 14.
+
 Para informar datos se pueden ejecutar las siguientes consultas SQL:
 
 ```
@@ -61,7 +85,12 @@ Se han creado tres programas, que corresponden al Modelo, Vista y Controlador.
 
 2. Vista
    Es el fuente dws0260v1.rpgle.
-   Se compila con 14.
+
+   Para compilar:
+
+   ```
+   CRTBNDRPG PGM(MyLib/DWS0260V1) SRCFILE(MyLib/QRPGLESRC) DBGVIEW(*ALL)
+   ```
 
 3. Controlador
    Es el fuente dws0260c1.rpgle.
