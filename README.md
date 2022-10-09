@@ -25,7 +25,7 @@ Y para ejecutarlo:
 CALL DWS0260CL
 ```
 
-De todas formas, se indican en los puntos siguientes, los mandatos para crearlos de forma independiente a modo de obtener ese conocimiento, pero mejor usar el CL.
+De todas formas, se indican en los puntos siguientes los mandatos para crearlos de forma independiente a modo de obtener ese conocimiento, pero mejor usar el CL.
 
 ## QDDSSRC
 
