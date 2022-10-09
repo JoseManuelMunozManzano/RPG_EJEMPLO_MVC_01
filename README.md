@@ -72,6 +72,8 @@ CRTBNDDIR BNDDIR(MyLib/BNDJOMUMA) TEXT('BINDING DIRECTORY FOR JOMUMA')
 
 En este binding directory se añadirá el service program.
 
+IMPORTANTE: El nombre del binding language será el mismo que el del service program.
+
 ## QRPGLESRC
 
 Se han creado tres programas, que corresponden al Modelo, Vista y Controlador.
