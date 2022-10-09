@@ -1,0 +1,33 @@
+       /************************************************************/
+       /* DWX0260CL - Compile all the MVC Programs                 */
+       /*                                                          */
+       /* Compile:                                                 */
+       /*    CRTBNDCL PGM(JOMUMA1/DWS0260CL)                       */
+       /*         SRCFILE(JOMUMA1/QCLLESRC) DBGVIEW(*ALL)          */
+       /*                                                          */
+       /* Execute:                                                 */
+       /*    CALL DWS0260CL                                        */
+       /************************************************************/
+       PGM
+
+       /* Compile DSPF */
+       CRTDSPF FILE(JOMUMA1/DWS0260FM) SRCFILE(JOMUMA1/QDSPSRC) RSTDSP(*YES)
+
+       /* Compile model (the service program) */
+       CRTRPGMOD MODULE(JOMUMA1/DWS0260M1) SRCFILE(JOMUMA1/QRPGLESRC) DBGVIEW(*ALL)
+       CRTSRVPGM SRVPGM(JOMUMA1/DWS0260M1) EXPORT(*SRCFILE) ACTGRP(*CALLER)
+
+       CRTBNDDIR BNDDIR(JOMUMA1/BNDJOMUMA) TEXT('BINDING DIRECTORY FOR JOMUMA')
+       MONMSG MSGID(CPF0000)
+       RMVBNDDIRE BNDDIR(JOMUMA1/BNDJOMUMA) OBJ((JOMUMA1/DWS0260M1))
+       MONMSG MSGID(CPF0000)
+       ADDBNDDIRE BNDDIR(JOMUMA1/BNDJOMUMA) OBJ((JOMUMA1/DWS0260M1))
+
+       /* Compile View */
+       CRTBNDRPG PGM(JOMUMA1/DWS0260V1) SRCFILE(JOMUMA1/QRPGLESRC) DBGVIEW(*ALL)
+
+       /* Compile Controller */
+       CRTRPGMOD MODULE(JOMUMA1/DWS0260C1) DBGVIEW(*SOURCE) SRCFILE(JOMUMA1/QRPGLESRC)
+       CRTPGM PGM(JOMUMA1/DWS0260C1) ACTGRP(*NEW) BNDDIR(JOMUMA1/BNDJOMUMA)
+
+       ENDPGM
